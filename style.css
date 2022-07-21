@@ -1,0 +1,55 @@
+#board9{
+  display: grid;
+  grid-template-columns: 33.3333% 33.3333% 33.3333%;
+}
+#board25{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  
+}
+.board {
+  border: 2px black solid;
+  padding: 5px;
+  background-color: silver;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+
+.cell {
+  padding: 15px;
+  margin: 0px;
+  white-space: pre;
+  
+}
+
+.cell.won{
+  background-color: rgb(90, 240, 120); 
+  color: indianred;
+}
+
+#selected {
+  border: 1.5px blue solid;
+  background-color: greenyellow;
+  
+}
+
+#activePlayer {
+  border: 1px blue solid;
+}
+
+#winnerModal{
+  background-color: bisque;
+}
+
+
+#root {
+  margin-bottom: 50px;
+  border: 1px black solid;
+  padding: 4px;
+  background-color: whitesmoke;
+}
+
+h1 {
+  text-align: center;
+}
