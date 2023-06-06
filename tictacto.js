@@ -247,7 +247,7 @@
           this.togglePlayer();
         }
         } else {
-          navigator.vibrate(250);
+          //navigator.vibrate(250);
           alert("Illegal move!");
         }
         
