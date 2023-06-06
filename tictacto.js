@@ -248,7 +248,7 @@
         }
         } else {
           navigator.vibrate(250);
-          alert("Illegal move!");
+         // alert("Illegal move!");
         }
         
         
