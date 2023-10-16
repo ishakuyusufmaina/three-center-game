@@ -1,6 +1,7 @@
 #board9{
   display: grid;
   grid-template-columns: 33.3333% 33.3333% 33.3333%;
+  aspect-ratio: 1;
 }
 #board25{
   display: grid;
