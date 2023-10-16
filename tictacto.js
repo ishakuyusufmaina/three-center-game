@@ -73,6 +73,9 @@
     addMoveListener(play){
       this.cells.map((cell, index)=>{
         cell.onclick=()=>{
+          if (clickRemoteCell){
+            clickRemoteCell(cell.id)
+          }
           play(index+1, cell.textContent);
         }});
     };
