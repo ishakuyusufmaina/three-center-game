@@ -49,6 +49,24 @@
         if (id.length ==0 | pcode.length ==0){
           return;
         }
+
+       /* get(db, "games/"+id).then((snapshot)=>{
+          if (snapshot.exists){
+            let value = snapshot.val;
+            if (value.passcode == passcode){
+              if (value.joined){
+                alert("game is engaged already!");
+              } else {
+                update(db, "games/"+id, {joined: true})
+                set(db, "games/"+id+"p2", {});
+              }
+            } else {
+              alert("wrong passcode pls!");
+            }
+          } else {
+            alert("game not existing");
+          }
+        } */
         
       }
 </script>
