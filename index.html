@@ -47,6 +47,7 @@ const db = getDatabase(app);
 
 
       createBtn.onclick = ()=>{
+        alert ("trying to create. pls wait..");
         let id = gameId.value;
         let pcode= gamePasscode.value;
         if (id.length==0 | pcode.length==0){
@@ -59,6 +60,10 @@ const db = getDatabase(app);
             set(ref(db, "games/"+id), {
               passcode: pcode,
               joined: false
+            }).then(()=>{
+              alert("game created successfully");
+            }).catch((e)=>{
+              alert(e);
             });
           }
         }).catch((e)=>{
