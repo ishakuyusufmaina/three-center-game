@@ -22,6 +22,8 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+  import { getDatabase, ref, get, set, child } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -41,7 +43,28 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
+const db = getDatabase(app);
 
+
+      createBtn.onclick = ()=>{
+        let id = gameId.value;
+        let pcode= gamePasscode.value;
+        if (id.length==0 | pcode.length==0){
+          return}
+        let dbRef = ref(db);
+        get(child(dbRef, "games/"+id)).then((snapshot)=>{
+          if (snapshot.exists()){
+            alert("game with " + id +" already exists. Change another id");
+          } else {
+            set(ref(db, "games/"+id), {
+              passcode: pcode,
+              joined: false
+            });
+          }
+        }).catch((e)=>{
+          alert(e);
+        });
+        
 
       joinBtn.onclick = ()=>{
         let id = gameId.value;
