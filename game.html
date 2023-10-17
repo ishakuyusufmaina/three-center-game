@@ -100,17 +100,20 @@ const db = getDatabase(app);
 
         if (player == "1st"){
       alert("pls wait for a joiner");
-      /*onValue (ref(db, "games/"+id), (snapshot)=>{
+       let unsubscribe = onValue (ref(db, "games/"+id), (snapshot)=>{
         let value = snapshot.val();
         if (value.joined){
           alert("a gamer has successfully joined as player 2");
-          */
+          unsubcribe();
+        }
+       });
           onValue(ref(db, "games/"+id+"/p2"), (snapshot)=>{
             let value = snapshot.val();
             if (!value){
-              alert("a gamer has successfully joined as player 2");
+            // alert("a gamer has successfully joined as player 2");
               return;
             }
+            
             let btnId = value.btnId;
             let btn = document.getElementById(btnId);
             btn.click();
