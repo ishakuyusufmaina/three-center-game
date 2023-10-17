@@ -106,7 +106,7 @@ const db = getDatabase(app);
           alert("a gamer has successfully joined as player 2");
           */
           onValue(ref(db, "games/"+id+"/p2"), (snapshot)=>{
-            value = snapshot.val();
+            let value = snapshot.val();
             if (!value){
               alert("a gamer has successfully joined as player 2");
               return;
