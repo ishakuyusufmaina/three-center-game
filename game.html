@@ -104,7 +104,7 @@ const db = getDatabase(app);
         let value = snapshot.val();
         if (value.joined){
           alert("a gamer has successfully joined as player 2");
-          unsubcribe();
+          unsubscribe();
         }
        });
           onValue(ref(db, "games/"+id+"/p2"), (snapshot)=>{
