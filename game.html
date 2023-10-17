@@ -95,7 +95,7 @@ const db = getDatabase(app);
     remotePlay=(index, content)=>{
       let remoteP = (player=="1st")? "p2" : "p1";
       set(ref(db, "games/"+id+"/"+remoteP), {
-        btnId: cellId,
+       // btnId: cellId,
       player: ttt.getPlayer(),
       moves: ttt.getMoves(),
       selected: ttt.getSelected(),
@@ -122,10 +122,10 @@ const db = getDatabase(app);
               return;
             }
             
-            let btnId = value.btnId;
-            let btn = document.getElementById(btnId);
+            //let btnId = value.btnId;
+            //let btn = document.getElementById(btnId);
             //btn.click();
-            alert (btnId);
+            //alert (btnId);
             /*ttt.setPlayer(value.player);
             ttt.setMoves(value.moves);
             ttt.setHands(value.hands);
@@ -143,10 +143,10 @@ const db = getDatabase(app);
           alert("you have successfully joined as player 2");
           return;
         }
-        let btnId = value.btnId;
-        let btn = document.getElementById(btnId);
+        //let btnId = value.btnId;
+        //let btn = document.getElementById(btnId);
         //btn.click();
-        alert(btnId);
+        //alert(btnId);
         /*ttt.setPlayer(value.player);
         ttt.setMoves(value.moves);
         ttt.setHands(value.hands);
