@@ -58,7 +58,7 @@ let str ="637";
  let tttCtr = new TicTacToeCtr(ttt,tttView); 
   root.appendChild(tttCtr.getView());
   //tttView.showWinner(1);
-var clickRemoteCell;
+var remotePlay;
   </script>
   <script type="module">
   // Import the functions you need from the SDKs you need
@@ -92,14 +92,17 @@ const db = getDatabase(app);
     let id = localStorage.getItem("id");
     let pcode = localStorage.getItem("pcode");
 
-    clickRemoteCell=(cellId)=>{
+    remotePlay=(index, content)=>{
       let remoteP = (player=="1st")? "p2" : "p1";
       set(ref(db, "games/"+id+"/"+remoteP), {
         btnId: cellId,
       player: ttt.getPlayer(),
       moves: ttt.getMoves(),
       selected: ttt.getSelected(),
-      hands: ttt.getHands()});
+      hands: ttt.getHands(),
+        index: index,
+        content: content
+      });
       
     }
 
@@ -123,11 +126,12 @@ const db = getDatabase(app);
             let btn = document.getElementById(btnId);
             //btn.click();
             alert (btnId);
-            ttt.setPlayer(value.player);
+            /*ttt.setPlayer(value.player);
             ttt.setMoves(value.moves);
             ttt.setHands(value.hands);
             ttt.setSelected(value.selected);
-            tttCtr.update();
+            tttCtr.update();*/
+            tttCtr.play(value.index, value.content);
           });
         //}
       //});
@@ -143,11 +147,12 @@ const db = getDatabase(app);
         let btn = document.getElementById(btnId);
         //btn.click();
         alert(btnId);
-        ttt.setPlayer(value.player);
+        /*ttt.setPlayer(value.player);
         ttt.setMoves(value.moves);
         ttt.setHands(value.hands);
         ttt.setSelected(value.selected);
-        tttCtr.update();
+        tttCtr.update();*/
+        tttCtr.play(value.index, value.content);
       });
     } else {
       alert("error encountered");
