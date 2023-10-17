@@ -95,7 +95,7 @@ const db = getDatabase(app);
     clickRemoteCell=(cellId)=>{
       let remoteP = (player=="1st")? "p2" : "p1";
       set(ref(db, "games/"+id+"/"+remoteP), {btnId: cellId });
-      alert(cellId);
+      
     }
 
         if (player == "1st"){
@@ -114,6 +114,7 @@ const db = getDatabase(app);
             let btnId = value.btnId;
             let btn = document.getElementById(btnId);
             btn.click();
+            alert (btnId);
           });
         //}
       //});
@@ -128,6 +129,7 @@ const db = getDatabase(app);
         let btnId = value.btnId;
         let btn = document.getElementById(btnId);
         btn.click();
+        alert(btnId);
       });
     } else {
       alert("error encountered");
