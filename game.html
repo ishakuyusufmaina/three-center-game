@@ -59,9 +59,6 @@ let str ="637";
   root.appendChild(tttCtr.getView());
   //tttView.showWinner(1);
 
-    function clickRemoteCell(cellId){
-      alert(cellId);
-    }
   </script>
   <script type="module">
   // Import the functions you need from the SDKs you need
@@ -90,10 +87,18 @@ let str ="637";
   const analytics = getAnalytics(app);
 const db = getDatabase(app);
 
+
     let player = localStorage.getItem("player");
     let id = localStorage.getItem("id");
     let pcode = localStorage.getItem("pcode");
-    if (player == "1st"){
+
+    function clickRemoteCell(cellId){
+      let remoteP = (player=="1st")? "p2" : "p1";
+      set(ref(db, "games/"+id+"/"+remoteP), {btnId: cellId });
+      alert(cellId);
+    }
+
+        if (player == "1st"){
       alert("pls wait for a joiner");
       onValue (ref(db, "games/"+id), (snapshot)=>{
         let value = snapshot.val();
