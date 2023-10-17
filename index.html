@@ -78,18 +78,18 @@ const db = getDatabase(app);
         let id = gameId.value;
         let pcode = gamePasscode.id;
         if (id.length ==0 | pcode.length ==0){
-          return;
+          return; 
         }
 
         let dbRef = ref(db);
-        get(dbRef, "games/"+id).then((snapshot)=>{
+        get(child(dbRef, "games/"+id)).then((snapshot)=>{
           if (snapshot.exists()){
             let value = snapshot.val();
             if (value.passcode == pcode){
               if (value.joined){
                 alert("game is engaged already!");
               } else {
-                set(db, "games/"+id, {
+                set(ref(db, "games/"+id), {
                   passcode: pcode,
                   joined: true
                 }).then(()=>{
@@ -104,9 +104,8 @@ const db = getDatabase(app);
           } else {
             alert("game not existing");
           }
-        }
-                          
-    }
+        });
+      }
 </script>
 </body>
 </html>
