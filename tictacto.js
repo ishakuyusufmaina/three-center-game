@@ -166,9 +166,10 @@
   
   class TicTacToeCtr{
     
-    constructor(model, view){
+    constructor(model, view, currentPlayer){
     this.model = model;
     this.view = view;
+    this.currentPlayer = currentPlayer;
     var firstPlayer = this.model.getPlayer();
     model=6;
     //view=6;
@@ -216,6 +217,7 @@
     }
     this.play = (pos, cont)=>{
       //alert(4);
+      if (this.model.getPlayer() !== this.currentPlayer){return}
       if (this.hasWon()) { return};
       if (this.getHand()>0 && cont==" "){
         this.model.getHands()[this.model.getPlayer()-1]--;
