@@ -74,21 +74,29 @@ const db = getDatabase(app);
         
 
       joinBtn.onclick = ()=>{
+        alert("pls wait while joining");
         let id = gameId.value;
         let pcode = gamePasscode.id;
         if (id.length ==0 | pcode.length ==0){
           return;
         }
 
-       /* get(db, "games/"+id).then((snapshot)=>{
-          if (snapshot.exists){
-            let value = snapshot.val;
-            if (value.passcode == passcode){
+        let dbRef = ref(db);
+        get(dbRef, "games/"+id).then((snapshot)=>{
+          if (snapshot.exists()){
+            let value = snapshot.val();
+            if (value.passcode == pcode){
               if (value.joined){
                 alert("game is engaged already!");
               } else {
-                update(db, "games/"+id, {joined: true})
-                set(db, "games/"+id+"p2", {});
+                set(db, "games/"+id, {
+                  passcode: pcode,
+                  joined: true
+                }).then(()=>{
+                  alert("successfully joined");
+                }).catch((e)=>{
+                  alert(e);
+                });
               }
             } else {
               alert("wrong passcode pls!");
@@ -96,9 +104,9 @@ const db = getDatabase(app);
           } else {
             alert("game not existing");
           }
-        } */
-        
-      }
+        }
+                          
+    }
 </script>
 </body>
 </html>
