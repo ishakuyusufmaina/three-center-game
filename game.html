@@ -54,7 +54,7 @@ let str ="637";
   }
   
     const player = localStorage.getItem("player");
-    let currentPlayer = (player=="1st") 1:2;
+    let currentPlayer = (player=="1st")? 1:2;
     let ttt = new TicTacToe();
     let tttView = new TicTacToeView();
     let tttCtr = new TicTacToeCtr(ttt, tttView, currentPlayer); 
