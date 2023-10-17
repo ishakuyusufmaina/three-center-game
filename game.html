@@ -53,10 +53,12 @@ let str ="637";
     }
   }
   
-  let ttt = new TicTacToe();
- let tttView = new TicTacToeView();
- let tttCtr = new TicTacToeCtr(ttt,tttView); 
-  root.appendChild(tttCtr.getView());
+    const player = localStorage.getItem("player");
+    let currentPlayer = (player=="1st") 1:2;
+    let ttt = new TicTacToe();
+    let tttView = new TicTacToeView();
+    let tttCtr = new TicTacToeCtr(ttt, tttView, currentPlayer); 
+    root.appendChild(tttCtr.getView());
   //tttView.showWinner(1);
 var remotePlay;
   </script>
@@ -88,7 +90,7 @@ var remotePlay;
 const db = getDatabase(app);
 
 
-    let player = localStorage.getItem("player");
+    
     let id = localStorage.getItem("id");
     let pcode = localStorage.getItem("pcode");
 
