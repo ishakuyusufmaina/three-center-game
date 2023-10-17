@@ -94,7 +94,12 @@ const db = getDatabase(app);
 
     clickRemoteCell=(cellId)=>{
       let remoteP = (player=="1st")? "p2" : "p1";
-      set(ref(db, "games/"+id+"/"+remoteP), {btnId: cellId });
+      set(ref(db, "games/"+id+"/"+remoteP), {
+        btnId: cellId,
+      player: ttt.getPlayer(),
+      moves: ttt.getMoves(),
+      selected: ttt.getSelected(),
+      hands: ttt.getHands()});
       
     }
 
@@ -116,8 +121,13 @@ const db = getDatabase(app);
             
             let btnId = value.btnId;
             let btn = document.getElementById(btnId);
-            btn.click();
+            //btn.click();
             alert (btnId);
+            ttt.setPlayer(value.player);
+            ttt.setMoves(value.moves);
+            ttt.setHands(value.hands);
+            ttt.setSelected(value.selected);
+            tttCtr.update();
           });
         //}
       //});
@@ -131,8 +141,13 @@ const db = getDatabase(app);
         }
         let btnId = value.btnId;
         let btn = document.getElementById(btnId);
-        btn.click();
+        //btn.click();
         alert(btnId);
+        ttt.setPlayer(value.player);
+        ttt.setMoves(value.moves);
+        ttt.setHands(value.hands);
+        ttt.setSelected(value.selected);
+        tttCtr.update();
       });
     } else {
       alert("error encountered");
