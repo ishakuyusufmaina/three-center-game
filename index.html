@@ -76,7 +76,7 @@ const db = getDatabase(app);
       joinBtn.onclick = ()=>{
         alert("pls wait while joining");
         let id = gameId.value;
-        let pcode = gamePasscode.id;
+        let pcode = gamePasscode.value;
         if (id.length ==0 | pcode.length ==0){
           return; 
         }
