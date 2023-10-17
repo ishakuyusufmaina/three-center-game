@@ -58,7 +58,7 @@ let str ="637";
  let tttCtr = new TicTacToeCtr(ttt,tttView); 
   root.appendChild(tttCtr.getView());
   //tttView.showWinner(1);
-
+var clickRemoteCell;
   </script>
   <script type="module">
   // Import the functions you need from the SDKs you need
@@ -92,7 +92,7 @@ const db = getDatabase(app);
     let id = localStorage.getItem("id");
     let pcode = localStorage.getItem("pcode");
 
-    function clickRemoteCell(cellId){
+    clickRemoteCell=(cellId)=>{
       let remoteP = (player=="1st")? "p2" : "p1";
       set(ref(db, "games/"+id+"/"+remoteP), {btnId: cellId });
       alert(cellId);
