@@ -1,11 +1,10 @@
   class TicTacToe {
-    constructor(currentPlayer){
+    constructor(){
     this.winningPositions = ["123", "159", "147", "258", "369", "357", "456", "789"];
     this.legalMoves = [12, 14, 15, 21, 23, 25, 32, 35, 36,
     41, 45, 47, 51, 52, 53, 54, 55, 56, 57, 58, 59,
     63, 65, 69, 74, 75, 78, 85, 87, 89, 96, 98, 95];
     this.player = 1;
-    this.currentPlayer = currentPlayer;
     this.seeds = ["X", "O"];
     this.moves = [[{from: 0, to: 0}, {from:0, to:0}, {from: 0, to: 0}], [{from:0, to:0}, {from: 0, to: 0}, {from: 0, to: 0}]];
     this.selected = 0;
