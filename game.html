@@ -100,24 +100,31 @@ const db = getDatabase(app);
 
         if (player == "1st"){
       alert("pls wait for a joiner");
-      onValue (ref(db, "games/"+id), (snapshot)=>{
+      /*onValue (ref(db, "games/"+id), (snapshot)=>{
         let value = snapshot.val();
         if (value.joined){
           alert("a gamer has successfully joined as player 2");
-          onValue(ref(db, "games/"+id+"p2"), (snapshot)=>{
+          */
+          onValue(ref(db, "games/"+id+"/p2"), (snapshot)=>{
             value = snapshot.val();
-            if (!value){return}
+            if (!value){
+              alert("a gamer has successfully joined as player 2");
+              return;
+            }
             let btnId = value.btnId;
             let btn = document.getElementById(btnId);
             btn.click();
           });
-        }
-      });
+        //}
+      //});
     } else if (player=="2nd"){
-      alert("you have successfully joined as second player");
-      onValue(ref(db, "games/"+id+"p1"), (snapshot)=>{
+      //alert("you have successfully joined as second player");
+      onValue(ref(db, "games/"+id+"/p1"), (snapshot)=>{
         let value= snapshot.val();
-        if (!value){return}
+        if (!value){
+          alert("you have successfully joined as player 2");
+          return;
+        }
         let btnId = value.btnId;
         let btn = document.getElementById(btnId);
         btn.click();
