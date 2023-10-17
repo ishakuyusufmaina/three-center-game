@@ -107,7 +107,7 @@ const db = getDatabase(app);
           unsubscribe();
         }
        });
-          onValue(ref(db, "games/"+id+"/p2"), (snapshot)=>{
+          onValue(ref(db, "games/"+id+"/p1"), (snapshot)=>{
             let value = snapshot.val();
             if (!value){
             // alert("a gamer has successfully joined as player 2");
@@ -123,7 +123,7 @@ const db = getDatabase(app);
       //});
     } else if (player=="2nd"){
       //alert("you have successfully joined as second player");
-      onValue(ref(db, "games/"+id+"/p1"), (snapshot)=>{
+      onValue(ref(db, "games/"+id+"/p2"), (snapshot)=>{
         let value= snapshot.val();
         if (!value){
           alert("you have successfully joined as player 2");
