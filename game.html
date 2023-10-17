@@ -101,6 +101,7 @@ const db = getDatabase(app);
           alert("a gamer has successfully joined as player 2");
           onValue(ref(db, "games/"+id+"p2"), (snapshot)=>{
             value = snapshot.val();
+            if (!value){return}
             let btnId = value.btnId;
             let btn = document.getElementById(btnId);
             btn.click();
@@ -111,6 +112,7 @@ const db = getDatabase(app);
       alert("you have successfully joined as second player");
       onValue(ref(db, "games/"+id+"p1"), (snapshot)=>{
         let value= snapshot.val();
+        if (!value){return}
         let btnId = value.btnId;
         let btn = document.getElementById(btnId);
         btn.click();
