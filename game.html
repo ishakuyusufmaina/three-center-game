@@ -95,6 +95,7 @@ const db = getDatabase(app);
     let pcode = localStorage.getItem("pcode");
 
     remotePlay=(index, content)=>{
+      
       let remoteP = (player=="1st")? "p2" : "p1";
       set(ref(db, "games/"+id+"/"+remoteP), {
        // btnId: cellId,
@@ -128,14 +129,13 @@ const db = getDatabase(app);
             //let btn = document.getElementById(btnId);
             //btn.click();
             //alert (btnId);
-            ttt.setPlayer(value.player);
-            /*
+            /*ttt.setPlayer(value.player);
             ttt.setMoves(value.moves);
             ttt.setHands(value.hands);
             ttt.setSelected(value.selected);
             tttCtr.update();*/
             tttCtr.play(value.index, value.content);
-            alert();
+            
           });
         //}
       //});
@@ -151,14 +151,13 @@ const db = getDatabase(app);
         //let btn = document.getElementById(btnId);
         //btn.click();
         //alert(btnId);
-        ttt.setPlayer(value.player);
-        /*
+        /*ttt.setPlayer(value.player);
         ttt.setMoves(value.moves);
         ttt.setHands(value.hands);
         ttt.setSelected(value.selected);
         tttCtr.update();*/
         tttCtr.play(value.index, value.content);
-        alert ();
+        
         });
     } else {
       alert("error encountered");
