@@ -70,13 +70,13 @@
      this.cells[i].classList.add("border", "border-light", "border-2");
    }
    }
-    addMoveListener(localPlay, remotePlay){
+    addMoveListener(localPlay){
       this.cells.map((cell, index)=>{
         cell.onclick=()=>{
-          if (remotePlay){
+          //if (remotePlay){
             remotePlay(index+1, cell.textContent);
-            alert("remote play");
-          }
+            //alert("remote play");
+          //}
           localPlay(index+1, cell.textContent);
         }});
     };
@@ -294,7 +294,7 @@
       return this.getMoves().slice(this.getMoves().length-3, this.getMoves().length);
     }
     
-    view.addMoveListener(this.play, remotePlay);
+    view.addMoveListener(this.play);
     view.addStartListener(this.start);
     
     this.getView = ()=>{
