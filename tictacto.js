@@ -75,6 +75,7 @@
         cell.onclick=()=>{
           if (remotePlay){
             remotePlay(index+1, cell.textContent);
+            alert("remote play");
           }
           localPlay(index+1, cell.textContent);
         }});
