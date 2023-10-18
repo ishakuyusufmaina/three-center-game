@@ -133,8 +133,8 @@ const db = getDatabase(app);
             ttt.setHands(value.hands);
             ttt.setSelected(value.selected);
             tttCtr.update();*/
-            tttCtr.model.setPlayer(value.player);
-            tttCtr.play(value.index, value.content);
+            tttCtr.play(value.index, value.content, true);
+            alert();
           });
         //}
       //});
@@ -155,8 +155,8 @@ const db = getDatabase(app);
         ttt.setHands(value.hands);
         ttt.setSelected(value.selected);
         tttCtr.update();*/
-        tttCtr.model.setPlayer(value.player);
-        tttCtr.play(value.index, value.content);
+        tttCtr.play(value.index, value.content, true);
+        alert ();
         });
     } else {
       alert("error encountered");
