@@ -210,6 +210,7 @@
       let player = this.model.getPlayer();
       player = player%2 + 1;
       this.model.setPlayer(player);
+      this.view.setDisabled(!player==this.currentPlayer);
       this.update();
     }
     
