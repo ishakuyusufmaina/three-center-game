@@ -216,9 +216,9 @@
       this.update();
       
     }
-    this.play = (pos, cont, isRemote)=>{
+    this.play = (pos, cont)=>{
       //alert(4);
-      if ((this.model.getPlayer() !== this.currentPlayer) && !isRemote){return}
+    //  if ((this.model.getPlayer() !== this.currentPlayer) && !isRemote){return}
       if (this.hasWon()) { return};
       if (this.getHand()>0 && cont==" "){
         this.model.getHands()[this.model.getPlayer()-1]--;
