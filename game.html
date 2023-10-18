@@ -140,6 +140,7 @@ const db = getDatabase(app);
         //}
       //});
     } else if (player=="2nd"){
+          tttCtr.view.setDisabled(true);
       //alert("you have successfully joined as second player");
       onValue(ref(db, "games/"+id+"/p2"), (snapshot)=>{
         let value= snapshot.val();
