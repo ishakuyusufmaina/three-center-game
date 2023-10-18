@@ -59,11 +59,14 @@
      this.cells =[];
      this.no_cells=9;
      this.boardId = "board9";
+     this.disabled = false;
      this.inflate();
  }
    addStartListener(handle){
      this.playBtn.onclick= ()=>{handle()};
    }
+   setDisabled(bool){this.disabled=bool}
+   getDisabled(){return this.disabled};
    inflate(){
    for (let i=this.cells.length; i<this.no_cells; i++){
      this.cells.push(newBtn(""));
@@ -73,6 +76,7 @@
     addMoveListener(localPlay){
       this.cells.map((cell, index)=>{
         cell.onclick=()=>{
+          if (this.disabled){return}
           //if (remotePlay){
             remotePlay(index+1, cell.textContent);
             //alert("remote play");
