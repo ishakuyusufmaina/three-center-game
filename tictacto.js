@@ -211,7 +211,7 @@
       player = player%2 + 1;
       this.model.setPlayer(player);
       this.view.setDisabled(!this.view.getDisabled());
-      alert("disabled status: " + this.view.getDisabled());
+      //alert("disabled status: " + this.view.getDisabled());
       this.update();
     }
     
@@ -219,6 +219,8 @@
       firstPlayer = firstPlayer%2 == 1? 2:1;
       this.model = new TicTacToe();
      this.model.setPlayer(firstPlayer);
+      this.view.setDisabled(!(this.currentPlayer==firstPlayer));
+      alert("disabled status: " + this.view.getDisabled());
       this.update();
       
     }
