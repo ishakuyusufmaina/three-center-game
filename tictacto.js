@@ -70,13 +70,13 @@
      this.cells[i].classList.add("border", "border-light", "border-2");
    }
    }
-    addMoveListener(play){
+    addMoveListener(localPlay, remotePlay){
       this.cells.map((cell, index)=>{
         cell.onclick=()=>{
           if (remotePlay){
             remotePlay(index+1, cell.textContent);
           }
-          play(index+1, cell.textContent);
+          localPlay(index+1, cell.textContent);
         }});
     };
      showWinner(player, pos){
@@ -293,7 +293,7 @@
       return this.getMoves().slice(this.getMoves().length-3, this.getMoves().length);
     }
     
-    view.addMoveListener(this.play);
+    view.addMoveListener(this.play, remotePlay);
     view.addStartListener(this.start);
     
     this.getView = ()=>{
