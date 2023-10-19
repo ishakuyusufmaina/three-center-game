@@ -109,7 +109,32 @@ const db = getDatabase(app);
       
     }
 
-        if (player == "1st"){
+    onValue(ref(db, "games/"+id+"/state"), (snapshot)=>{
+      let value = snapshot.val();
+      if (value){
+        tttCtr.model.setMoves(value.moves);
+        tttCtr.model.setHands(value.hands);
+        tttCtr.model.setPlayer(value.player);
+        tttCtr.model.setSelected(value.selected);
+        tttCtr.update();
+      }
+        });
+
+    let unsubscribe= onValue(ref(db, "games/"+id), (snapshot)=>{
+      let value = snapshot.val();
+      if (value.joines){
+        alert("a gamer has successfully joined, you are first to play");
+        unsubscribe ();
+      }
+    });
+
+    if (player=="1st"){
+      alert("pls wait for a joiner");
+    } else {
+      alert("you have successfully joined as player 2");
+    }
+
+        /*if (player == "1st"){
       alert("pls wait for a joiner");
        let unsubscribe = onValue (ref(db, "games/"+id), (snapshot)=>{
         let value = snapshot.val();
@@ -168,6 +193,7 @@ const db = getDatabase(app);
     } else {
       alert("error encountered");
     }
+    */
   </script>
 </body>
 </html>
