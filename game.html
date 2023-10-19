@@ -137,6 +137,7 @@ const db = getDatabase(app);
             //tttCtr.play(value.index, value.content);
             tttCtr.model.setPlayer(value.player);
             tttCtr.update();
+            tttCtr.view.setDisabled(false);
           });
         //}
       //});
@@ -161,6 +162,7 @@ const db = getDatabase(app);
         //tttCtr.play(value.index, value.content);
         //ttt.setPlayer(value.player);
         //tttCtr.update();
+        tttCtr.view.setDisabled(false);
         
         });
     } else {
