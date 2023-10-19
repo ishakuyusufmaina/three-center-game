@@ -96,8 +96,8 @@ const db = getDatabase(app);
 
     remotePlay=(index, content)=>{
       
-      let remoteP = (player=="1st")? "p2" : "p1";
-      set(ref(db, "games/"+id+"/"+remoteP), {
+     // let remoteP = (player=="1st")? "p2" : "p1";
+      set(ref(db, "games/"+id+"/state"), {
        // btnId: cellId,
       player: ttt.getPlayer(),
       moves: ttt.getMoves(),
