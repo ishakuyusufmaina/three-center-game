@@ -193,7 +193,8 @@
       p2RecentMoves.map((mo)=>{p2Pos.push(mo.to)});
       
       let selected = this.model.getSelected();
-      
+
+    view.setDisabled(!(this.currentPlayer==model.getPlayer()));
      viewRoot= view.render(seeds[0], hands[0], seeds[1], hands[1], player, p1Pos, p2Pos, selected);
       
     }
@@ -210,7 +211,7 @@
       let player = this.model.getPlayer();
       player = player%2 + 1;
       this.model.setPlayer(player);
-      this.view.setDisabled(!this.view.getDisabled());
+      //this.view.setDisabled(!this.view.getDisabled());
       //alert("disabled status: " + this.view.getDisabled());
       this.update();
     }
@@ -219,9 +220,10 @@
       firstPlayer = firstPlayer%2 == 1? 2:1;
       this.model = new TicTacToe();
      this.model.setPlayer(firstPlayer);
-      this.view.setDisabled(!(this.currentPlayer==firstPlayer));
-      alert("disabled status: " + this.view.getDisabled());
+      //this.view.setDisabled(!(this.currentPlayer==firstPlayer));
       this.update();
+      alert("disabled status: " + this.view.getDisabled());
+      //this.update();
       
     }
     this.play = (pos, cont)=>{
@@ -264,8 +266,7 @@
           //navigator.vibrate(250);
           alert("Illegal move!");
         }
-        
-        
+      
         
       }
       
