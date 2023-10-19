@@ -122,7 +122,7 @@ const db = getDatabase(app);
 
     let unsubscribe= onValue(ref(db, "games/"+id), (snapshot)=>{
       let value = snapshot.val();
-      if (value.joines){
+      if (value.joined){
         alert("a gamer has successfully joined, you are first to play");
         unsubscribe ();
       }
