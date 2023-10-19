@@ -129,13 +129,14 @@ const db = getDatabase(app);
             //let btn = document.getElementById(btnId);
             //btn.click();
             //alert (btnId);
-            ttt.setPlayer(value.player);
+            
             ttt.setMoves(value.moves);
             ttt.setHands(value.hands);
             ttt.setSelected(value.selected);
             //tttCtr.update();
             tttCtr.play(value.index, value.content);
-            
+            ttt.setPlayer(value.player);
+            tttCtr.update();
           });
         //}
       //});
