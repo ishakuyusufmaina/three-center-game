@@ -118,7 +118,7 @@ const db = getDatabase(app);
         tttCtr.model.setPlayer(value.player);
         tttCtr.model.setSelected(value.selected);
         tttCtr.model.setSeeds(value.seeds);
-        tttCtr.update();
+        tttCtr.play(value.index, value.content);
       }
         });
 
