@@ -218,9 +218,9 @@
     }
     
     this.start =()=>{
-      firstPlayer = this.firstPlayer%2 == 1? 2:1;
+      this.firstPlayer = this.firstPlayer%2 == 1? 2:1;
       this.model = new TicTacToe();
-     this.model.setPlayer(firstPlayer);
+     this.model.setPlayer(this.firstPlayer);
       //this.view.setDisabled(!(this.currentPlayer==firstPlayer));
       this.update();
       alert("disabled status: " + this.view.getDisabled());
