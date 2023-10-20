@@ -53,7 +53,8 @@
    this.winnerModal = newDiv("");
    this.winnerModal.id= "winnerModal";
    this.winnerModal.classList.add("modal");
-   this.playBtn = newBtn("Play again")alethis.playBtn.classList.add("btn-primary");
+   this.playBtn = newBtn("Play again");
+     this.playBtn.classList.add("btn-primary");
    this.playBtn.setAttribute("data-bs-dismiss", "modal");
      this.cells =[];
      this.no_cells=9;
