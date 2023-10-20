@@ -76,7 +76,7 @@
     addMoveListener(localPlay){
       this.cells.map((cell, index)=>{
         cell.onclick=()=>{
-          if (this.disabled){return}
+          if (false){return}
           //if (remotePlay){
             remotePlay(index+1, cell.textContent);
             //alert("remote play");
