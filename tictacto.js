@@ -171,11 +171,12 @@
   
   class TicTacToeCtr{
     
-    constructor(model, view, currentPlayer){
-    this.model = model;
-    this.view = view;
-    this.currentPlayer = currentPlayer;
-    var firstPlayer = this.model.getPlayer();
+    constructor(model, view, currentPlayer, firstPlayer){
+      this.model = model;
+      this.view = view;
+      this.currentPlayer = currentPlayer;
+      this.firstPlayer=firstPlayer;
+    //var firstPlayer = this.model.getPlayer();
     model=6;
     //view=6;
     var viewRoot;
@@ -194,7 +195,7 @@
       
       let selected = this.model.getSelected();
 
-   // view.setDisabled(!(this.currentPlayer==this.model.getPlayer()));
+     view.setDisabled(!(this.currentPlayer==this.model.getPlayer()));
      viewRoot= view.render(seeds[0], hands[0], seeds[1], hands[1], player, p1Pos, p2Pos, selected);
       
     }
@@ -217,7 +218,7 @@
     }
     
     this.start =()=>{
-      firstPlayer = firstPlayer%2 == 1? 2:1;
+      firstPlayer = this.firstPlayer%2 == 1? 2:1;
       this.model = new TicTacToe();
      this.model.setPlayer(firstPlayer);
       //this.view.setDisabled(!(this.currentPlayer==firstPlayer));
