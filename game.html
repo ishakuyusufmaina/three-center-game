@@ -57,7 +57,7 @@ let str ="637";
     let currentPlayer = (player=="1st")? 1:2;
     let ttt = new TicTacToe();
     let tttView = new TicTacToeView();
-    let tttCtr = new TicTacToeCtr(ttt, tttView, currentPlayer); 
+    let tttCtr = new TicTacToeCtr(ttt, tttView, currentPlayer, 1); 
     root.appendChild(tttCtr.getView());
   //tttView.showWinner(1);
 var remotePlay;
@@ -110,6 +110,8 @@ const db = getDatabase(app);
       
     }
 
+    
+
     onValue(ref(db, "games/"+id+"/state"), (snapshot)=>{
       let value = snapshot.val();
       if (value){
@@ -124,8 +126,10 @@ const db = getDatabase(app);
 
     let unsubscribe= onValue(ref(db, "games/"+id), (snapshot)=>{
       let value = snapshot.val();
-      if (value.joined){
+      if (value.joined & player=="1st"){
         alert("a gamer has successfully joined, you are first to play");
+        //tttCtr.firstPlayer = value.firstPlayer;
+        //tttCtr.update();
         unsubscribe ();
       }
     });
