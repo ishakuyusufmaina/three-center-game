@@ -53,8 +53,7 @@
    this.winnerModal = newDiv("");
    this.winnerModal.id= "winnerModal";
    this.winnerModal.classList.add("modal");
-   this.playBtn = newBtn("Play again");
-   this.playBtn.classList.add("btn-primary");
+   this.playBtn = newBtn("Play again")alethis.playBtn.classList.add("btn-primary");
    this.playBtn.setAttribute("data-bs-dismiss", "modal");
      this.cells =[];
      this.no_cells=9;
@@ -76,13 +75,14 @@
     addMoveListener(localPlay){
       this.cells.map((cell, index)=>{
         cell.onclick=()=>{
-          alert("I'm clicked");
           if (false){return}
+          alert("I'm clicked 1");
           //if (remotePlay){
             remotePlay(index+1, cell.textContent);
             //alert("remote play");
           //}
           localPlay(index+1, cell.textContent);
+          alert("I'm clicked 2");
         }});
     };
      showWinner(player, pos){
