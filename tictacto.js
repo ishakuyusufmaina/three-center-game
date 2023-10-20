@@ -195,7 +195,7 @@
       
       let selected = this.model.getSelected();
 
-     view.setDisabled(!(this.currentPlayer==this.model.getPlayer()));
+    // view.setDisabled(!(this.currentPlayer==this.model.getPlayer()));
      viewRoot= view.render(seeds[0], hands[0], seeds[1], hands[1], player, p1Pos, p2Pos, selected);
       
     }
