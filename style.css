@@ -20,8 +20,8 @@
 
 
 .cell {
+  display: block;
   padding: 15px;
-  margin: 0px;
   white-space: pre;
   border-radius: 50%;
   aspect-ratio: 1;
@@ -46,6 +46,10 @@
 
 #activePlayer {
   border: 1px blue solid;
+  background-color: teal;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #winnerModal{
