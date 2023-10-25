@@ -1,6 +1,6 @@
 #board9{
   display: grid;
-  grid-template-columns: 33.3333% 33.3333% 33.3333%;
+  grid-template-columns: 15% 15% 15%;
 }
 #board25{
   display: grid;
