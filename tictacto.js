@@ -132,7 +132,7 @@
        
        p1Positions.map((pos)=>{
          if (pos > 0){
-         this.cells[pos-1].innerHTML = seed1;
+         this.cells[pos-1].innerHTML = seed2;
          }
        });
        p2Positions.map((pos)=>{
