@@ -11,7 +11,8 @@
 }
 .board {
   border: 2px black solid;
-  background-color: rgb(250, 100, 0);
+  padding: 10px;
+  background-color: darkgrey;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   aspect-ratio: 1;
@@ -22,7 +23,7 @@
   display: block;
   padding: 15px;
   white-space: pre;
-  border-radius: 50%;
+  border-radius: 45%;
   aspect-ratio: 1/1;
   border: 1px solid black;
   color: white;
@@ -66,4 +67,8 @@
 
 h1 {
   text-align: center;
+}
+
+body {
+  background-color: black;
 }
