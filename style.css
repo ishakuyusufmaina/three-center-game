@@ -1,6 +1,6 @@
 #board9{
   display: grid;
-  grid-template-columns: 33.33333% 33.33333% 33.33333%;
+  grid-template-columns: 15.33333% 15.33333% 15.33333%;
  // grid-template-rows: 15% 15% 15%;
   justify-content: space-between;
   align-content: space-between;
@@ -31,6 +31,7 @@
   font-weight: bold;
   background-color: teal;
   font-size: 24px;
+  text-align: center;
   
 }
 
@@ -46,6 +47,7 @@
 }
 
 #activePlayer {
+  padding: 5px:
   border: 1px blue solid;
   background-color: teal;
   color: white;
