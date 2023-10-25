@@ -1,6 +1,8 @@
 #board9{
   display: grid;
   grid-template-columns: 15% 15% 15%;
+  justify-content: space-between;
+  align-content: space-between;
 }
 #board25{
   display: grid;
