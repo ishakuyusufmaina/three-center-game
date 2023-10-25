@@ -73,3 +73,9 @@ h1 {
 body {
   background-color: black;
 }
+
+
+footer {
+  background-color: darkgrey;
+  font-weight: bold;
+}
