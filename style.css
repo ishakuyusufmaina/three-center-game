@@ -24,8 +24,8 @@
   display: block;
   padding: 15px;
   white-space: pre;
-  border-radius: 45%;
-  aspect-ratio: 1/1;
+  border-radius: 50%;
+  aspect-ratio: 1;
   border: 1px solid black;
   color: white;
   font-weight: bold;
