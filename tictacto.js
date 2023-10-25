@@ -66,7 +66,8 @@
    }
    inflate(){
    for (let i=this.cells.length; i<this.no_cells; i++){
-     this.cells.push(newBtn(""));
+     let cell = document.createElement("div");
+     this.cells.push(cell);
      this.cells[i].classList.add("border", "border-light", "border-2");
    }
    }
