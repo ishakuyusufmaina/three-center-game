@@ -20,6 +20,12 @@
   padding: 15px;
   margin: 0px;
   white-space: pre;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  border: 1px solid black;
+  color: white;
+  font-weight: bold;
+  background-color: teal;
   
 }
 
