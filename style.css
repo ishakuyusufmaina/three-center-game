@@ -1,7 +1,7 @@
 #board9{
   display: grid;
-  grid-template-columns: 15.33333% 15.33333% 15.33333%;
- // grid-template-rows: 15% 15% 15%;
+  grid-template-columns: 15% 15% 15%;
+  grid-template-rows: 15% 15% 15%;
   justify-content: space-between;
   align-content: space-between;
 }
@@ -24,9 +24,9 @@
   display: block;
   padding: 15px;
   white-space: pre;
-  width: 15.33333%;
-  height: 15.33333%;
- // border-radius: 50%;
+  width: 15%;
+  height: 15%;
+  border-radius: 50%;
   aspect-ratio: 1;
   border: 1px solid black;
   color: white;
