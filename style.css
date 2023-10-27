@@ -17,8 +17,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   text-align: center;
   aspect-ratio: 1;
-  background: url(3cBg1.jpg) no-repeat center fixed; 
-  background-size: cover;
+  background-color: rgba(0,0,0, .3)
 }
 
 
@@ -68,8 +67,8 @@
   margin-bottom: 50px;
   border: 1px black solid;
   padding: 4px;
-  background-color: rgba(10,10,10, .5);
-                        
+  background: url(3cBg2.jpg) no-repeat center fixed; 
+  background-size: cover;                        
 }
 
 h1 {
