@@ -17,7 +17,7 @@
   <div id="root">
     <div id="boardContainer"></div>
     <div id="status"></div>
-    <input id="inp" placeholder="player">
+    <button id="reset">Reset</button>
     
   </div>
   <!--footer><small>©2022 I. Y Maina</small></footer-->
@@ -33,6 +33,10 @@
   </style>
   <script> 
  var board = new Model(3);
+    reset.onclick = ()=>{
+      board = new Model(3);
+      remotePlay(board);
+    }
 var mode= "remote";
  // alert(board.currentPlayer.seed)
  const boardElm = createBoard(board);
