@@ -2,27 +2,52 @@
 
 <html>
 <head>
-  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Three Center Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="author" content="Ishaku Yusuf Maina">
+  <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="sty l e.css" rel="stylesheet">
+  <script src="element.js"></script>
+<!-- Latest compiled JavaScript -->
+  <script src="model.js" ></script>
 </head>
-<body>
-  <h1>
+<body class="container">
+  <h1 class="small">Say Center</h1>
+  <div id="root">
+    <div id="boardContainer"></div>
+    <div id="status"></div>
+    <input id="inp" placeholder="player">
     
-  </h1>  
-  <div id="join_create_game">
-    <h2>Join/create 3C game</h2>
-    <input placeholder="game id" id="gameId"><br>
-    <input placeholder="passcode" id="gamePasscode"><br>
-    <button id="joinBtn">Join</button>
-    <button id="createBtn">Create</button>
+  </div>
+  <!--footer><small>©2022 I. Y Maina</small></footer-->
+  <style>
+  #boardContainer {
+   width: 100%; /* Set a fixed width */
+  height: 400px; /* Set a fixed height */
+  overflow: auto; /* Enable scrolling for both axes (x and y) */
+  border: 2px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  }
+  </style>
+  <script> 
+ var board = new Model(3);
+var mode= "remote";
+ // alert(board.currentPlayer.seed)
+ const boardElm = createBoard(board);
+  const status = document.getElementById("status"); //.appendChild(updateStatus(board));
+ // root1.appendChild(boardElm);
+  animate();
+  </script>
 
 
 
-    <script type="module">
+<script type="module">
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
-  import { getDatabase, ref, get, set, child } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
+  import { getDatabase, ref, get, set, child, onValue} from "https://www.gstatic.com/firebasejs/10.5.0/firebase-database.js";
 
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
@@ -46,10 +71,25 @@
 const db = getDatabase(app);
 
 
+
+onValue(ref(db, "games/test11"), (snapshot)=>{
+let value = snapshot.val();
+   if (value){
+console.log(value.board);
+board.fromRemote(value.board);
+
+}  });
+
+remotePlay = (board)=> {
+set(ref(db, "games/test11"), {
+board: board.toRemote() });
+}
+
+/*
       createBtn.onclick = ()=>{
         alert ("trying to create. pls wait..");
         let id = gameId.value;
-        let pcode= gamePasscode.value;
+        let pcode= passcode.value;
         if (id.length==0 | pcode.length==0){
           return}
         let dbRef = ref(db);
@@ -65,7 +105,7 @@ const db = getDatabase(app);
               localStorage.setItem("player", "1st");
               localStorage.setItem("id", id);
               localStorage.setItem("pcode", pcode);
-              window.location.assign("https://ishakuyusufmaina.github.io/three-center-game/game");
+              window.location.assign("wait.html");
             }).catch((e)=>{
               alert(e);
             });
@@ -101,7 +141,7 @@ const db = getDatabase(app);
                   localStorage.setItem("player", "2nd");
                   localStorage.setItem("id", id);
                   localStorage.setItem("pcode", pcode);
-                  window.location.assign("https://ishakuyusufmaina.github.io/three-center-game/game");
+                  window.location.assign("....html");
       
                 }).catch((e)=>{
                   alert(e);
@@ -114,7 +154,7 @@ const db = getDatabase(app);
             alert("game not existing");
           }
         });
-      }
+      } */
 </script>
 </body>
 </html>
