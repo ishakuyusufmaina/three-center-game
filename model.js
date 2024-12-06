@@ -322,7 +322,7 @@ function play(r, c, board){
             let won = isC(board);
             if (won) {
                 alert("Won!");
-                board.currentPlayer.score++;
+                board.players[board.currentPlayerIndex].score +=1;
                 board.reset();
             }
             board.togglePlayer();
