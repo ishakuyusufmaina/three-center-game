@@ -152,6 +152,7 @@ class Model extends Array{
 
 
     reset(){
+        this.selectedIndex=null;
         if (this.length){
             this.forEach((row)=>{
                 row.forEach((cell, i)=>{
